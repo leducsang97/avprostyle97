@@ -45,8 +45,13 @@ var intents = new builder.IntentDialog({ recognizers: [recognizer] })
 .matches('<yourIntent>')... See details at http://docs.botframework.com/builder/node/guides/understanding-natural-language/
 */
 
+
 .onDefault((session) => {
-    session.send('Sorry, I did not understand \'%s\'.', session.message.text);
+    if (session.message.text == "hi"){
+        session.send("Hello, Chris. How are you?")
+    }
+    else{session.send('Sorry, I did not understand \'%s\'.', session.message.text);}
+    
 });
 
 bot.dialog('/', intents);    
