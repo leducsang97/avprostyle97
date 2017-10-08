@@ -47,7 +47,7 @@ var intents = new builder.IntentDialog({ recognizers: [recognizer] })
 
 
 .onDefault((session) => {
-    if (session.message.text == "hi"){
+    if (session.message.text === "hi"){
         session.send("Hello, Chris. How are you?")
     }
     else{session.send('Sorry, I did not understand \'%s\'.', session.message.text);}
